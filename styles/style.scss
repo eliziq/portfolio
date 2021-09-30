@@ -1,0 +1,115 @@
+$header1: 2.5rem;
+$header2: 4rem;
+$header3: 2rem;
+$header4: 2.5rem;
+$text: 2.5rem;
+$gradient: linear-gradient(left, #43d687, #fcff79);
+$background-color: #9dea80;
+$gray-text: #2c2c2c;
+
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@import "global";
+@import "intro";
+@import "projects";
+@import "contact";
+@import "footer";
+
+@media screen and (max-width: 1383px) {
+  html {
+    font-size: 53%;
+  }
+  .splash {
+    width: 50vw;
+  }
+  #sweater {
+    fill: rgb(221, 221, 221);
+  }
+  #steam path {
+    fill: rgb(221, 221, 221);
+  }
+  svg {
+    width: 80%;
+  }
+  nav {
+    width: 100%;
+  }
+  .projects {
+    flex-direction: column;
+    img{
+      width: 70vw;
+    }
+  }
+  .photography {
+    margin-bottom: 6rem;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  html {
+    font-size: 40%;
+  }
+  .intro {
+    flex-direction: column;
+  }
+  .splash {
+    display: none;
+  }
+  svg {
+    height: 60%;
+    padding-top: 3rem;
+    margin: 0 0 0 10%;
+  }
+  .main-head {
+    width: 100%;
+  }
+  nav {
+    width: 100%;
+    margin-top: 2rem;
+    .logo {
+      margin: 1rem;
+      @include flex(center, center, row);
+      flex: 1 1 20rem;
+      img {
+        height: 30px;
+      }
+    }
+    ul {
+      @include flex(space-around, center, row);
+      flex: 1 1 80rem;
+      margin: auto;
+    }
+  }
+  .intro-text {
+    h2 {
+      font-size: 7rem;
+    }
+    h3 {
+      font-size: 5rem;
+    }
+    margin: 4rem 2rem;
+    text-align: center;
+  }
+  .intro-social {
+    @include flex(center, center, row);
+    a {
+      margin: 2rem;
+    }
+  }
+
+  .projects {
+    flex-direction: column;
+  }
+
+  .travelly,
+  .photography {
+    img {
+      width: 100%;
+    }
+  }
+}
